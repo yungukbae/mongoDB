@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        title mongoose-server
+            style.
+                table {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+                table th, table td{
+
+                border: 1px solid black;
+
+                }
+
+body
+    div
+        form#user-form
+            fieldset
+                legend user-register
+                div
+                input#username(type="text" placeholder="name")
+                div
+                input#age(type="number" placeholder="age")
+                div
+                    input#married(type="checkbox")
+                    label(for="married") married
+                    button(type="submit") submit
+                    br
+        table#user-list
+            thead
+                tr
+                    th id
+                    th name
+                    th age
+                    th married
+            tbody
+                for user in users
+                    tr
+                    td=user._id
+                    td=user.name
+                    td=user.age
+                    td=user.married ? 'married' : 'solo'
+                    br
+                    
+                                
+        form#comment-form
+            fieldset
+                legend comment
+                div
+                input#userid(type="text" placeholder="userid")
+                div
+                input#comment(type="text" placeholder="comment")
+                button(type="submit") submit
+                br
+        table#comment-list
+            thead
+                tr
+                    th id
+                    th writer
+                    th comment
+                    th alert
+                    th delete
+                tbody
+            script(src='/mongoose.js')
