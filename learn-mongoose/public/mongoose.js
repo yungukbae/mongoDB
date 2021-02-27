@@ -156,9 +156,9 @@ document.getElementById('user-form').addEventListener('submit',function(e) {
 
 document.getElementById('comment-form').addEventListener('submit',function(e){
     e.preventDefault();
-    var userid = e.target.userid.value;
+    var commenter = e.target.commenter.value;
     var comment = e.target.comment.value;
-    if(!userid){
+    if(!commenter){
         return alert('write id');
     }
     if(!comment){
@@ -176,7 +176,7 @@ document.getElementById('comment-form').addEventListener('submit',function(e){
     };
     xhr.open('POST','/comments');
     xhr.setRequestHeader('Content-Type','application/json');
-    xhr.send(JSON.stringify({id:id, comment:comment}));
-    e.target.userid.value = '';
+    xhr.send(JSON.stringify({id:commenter, comment:comment}));
+    e.target.commenter.value = '';
     e.target.comment.value = '';
 });

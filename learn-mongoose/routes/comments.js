@@ -23,8 +23,6 @@ router.post('/',function(req,res,next){
     comment.save()
         .then((result) => {
             return Comment.populate(result, {path: 'commenter'});
-        })
-        .then((result) => {
             res.status(201).json(result);
         })
         .catch((err) => {
@@ -32,6 +30,7 @@ router.post('/',function(req,res,next){
             next(err);
         });
 });
+
 
 router.patch('/:id',function(req,res,next){
     Comment.update({_id:req.params.id},{comment:req.body.comment})

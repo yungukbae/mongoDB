@@ -10,7 +10,7 @@ html
                 }
                 table th, table td{
 
-                border: 1px solid black;
+                border: 1px solid #000000;
 
                 }
 
@@ -49,9 +49,10 @@ body
             fieldset
                 legend comment
                 div
-                input#userid(type="text" placeholder="userid")
+                input#commenter(type="text" placeholder="commenter")
                 div
                 input#comment(type="text" placeholder="comment")
+
                 button(type="submit") submit
                 br
         table#comment-list
@@ -63,4 +64,4 @@ body
                     th alert
                     th delete
                 tbody
-            script(src='/mongoose.js')
+    script(src='/mongoose.js')
