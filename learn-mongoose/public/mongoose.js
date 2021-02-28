@@ -152,7 +152,10 @@ document.getElementById('user-form').addEventListener('submit',function(e) {
     e.target.married.checked = false;
 });
 
+
+
 //댓글 등록시
+
 
 document.getElementById('comment-form').addEventListener('submit',function(e){
     e.preventDefault();
